@@ -21,6 +21,8 @@ class OrderItemCreateUpdateSerializer(serializers.ModelSerializer):
 
     def validate_quantity(self, value):
         if value > 1000:
-            return serializers.ValidationError("Quantity must be less or equal than 1000")
+            return serializers.ValidationError(
+                "Quantity must be less or equal than 1000"
+            )
 
         return value
