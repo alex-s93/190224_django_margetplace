@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from marketplace.models import Product
-from marketplace.serializers.suppliers import SupplierSerializer
+from marketplace.serializers.supplier_serializer import SupplierSerializer
 from marketplace.serializers.category_serializer import CategorySerializer
 
 

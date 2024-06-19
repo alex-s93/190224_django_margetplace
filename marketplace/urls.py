@@ -7,9 +7,12 @@ from marketplace.views.product_views import (
     ProductListCreateView,
     ProductRetrieveUpdateDeleteGenericView,
 )
+from marketplace.views.supplier_view import SupplierModelViewSet
+
 
 router = DefaultRouter()
 router.register('categories', CategoryViewSet)
+router.register('supplier', SupplierModelViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
