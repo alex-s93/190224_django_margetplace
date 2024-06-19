@@ -7,6 +7,10 @@ from marketplace.views.product_views import (
     ProductListCreateView,
     ProductRetrieveUpdateDeleteGenericView,
 )
+from marketplace.views.product_detail_views import (
+    ProductDetailListCreateView,
+    ProductDetailRetrieveUpdateDeleteView
+)
 from marketplace.views.supplier_view import SupplierModelViewSet
 
 
@@ -17,5 +21,7 @@ router.register('supplier', SupplierModelViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('products/', ProductListCreateView.as_view()),
-    path('products/<int:pk>', ProductRetrieveUpdateDeleteGenericView.as_view()),
+    path('products/<int:pk>/', ProductRetrieveUpdateDeleteGenericView.as_view()),
+    path('product-details/', ProductDetailListCreateView.as_view()),
+    path('product-details/<int:pk>/', ProductDetailRetrieveUpdateDeleteView.as_view()),
 ]
