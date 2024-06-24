@@ -4,6 +4,7 @@ from rest_framework.generics import (
     get_object_or_404,
 )
 
+
 from marketplace.models import Product
 from marketplace.serializers.product_serializer import (
     ProductDetailSerializer,
