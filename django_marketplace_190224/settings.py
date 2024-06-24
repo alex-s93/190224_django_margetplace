@@ -14,6 +14,7 @@ from pathlib import Path
 from environ import Env
 from datetime import timedelta
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -96,8 +97,8 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=7),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
-
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'TOKEN_OBTAIN_SERIALIZER': 'marketplace.serializers.custom_jwt_serializer.CustomJwtSerializer'
 }
 
 # Database
