@@ -2,6 +2,7 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from marketplace.views.category_views import CategoryViewSet
 from marketplace.views.product_views import (
@@ -26,4 +27,6 @@ urlpatterns = [
     path('product-details/', ProductDetailListCreateView.as_view()),
     path('product-details/<int:pk>/', ProductDetailRetrieveUpdateDeleteView.as_view()),
     path('login/', obtain_auth_token),
+    path('get-token-now/', TokenObtainPairView.as_view()),
+    path('get-token-now/refresh/', TokenRefreshView.as_view())
 ]
