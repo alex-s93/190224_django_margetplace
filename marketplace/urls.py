@@ -5,6 +5,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from marketplace.views.category_views import CategoryViewSet
+from marketplace.views.custom_jwt_view import CustomObtainPairApiView
 from marketplace.views.product_views import (
     ProductListCreateView,
     ProductRetrieveUpdateDeleteGenericView,
@@ -27,6 +28,6 @@ urlpatterns = [
     path('product-details/', ProductDetailListCreateView.as_view()),
     path('product-details/<int:pk>/', ProductDetailRetrieveUpdateDeleteView.as_view()),
     path('login/', obtain_auth_token),
-    path('get-token-now/', TokenObtainPairView.as_view()),
-    path('get-token-now/refresh/', TokenRefreshView.as_view())
+    path('token-auth/', CustomObtainPairApiView.as_view()),
+    path('token-auth/refresh/', TokenRefreshView.as_view())
 ]
