@@ -4,7 +4,7 @@ from marketplace.serializers.customer_serializer import CustomerSerializer
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    customer = CustomerSerializer()
+
 
     class Meta:
         model = Order

@@ -14,6 +14,7 @@ from marketplace.views.product_detail_views import (
     ProductDetailListCreateView,
     ProductDetailRetrieveUpdateDeleteView
 )
+from marketplace.views.orders_views import OrderLisCreateView
 from marketplace.views.supplier_view import SupplierModelViewSet
 
 
@@ -29,5 +30,6 @@ urlpatterns = [
     path('product-details/<int:pk>/', ProductDetailRetrieveUpdateDeleteView.as_view()),
     path('login/', obtain_auth_token),
     path('token-auth/', CustomObtainPairApiView.as_view()),
-    path('token-auth/refresh/', TokenRefreshView.as_view())
+    path('token-auth/refresh/', TokenRefreshView.as_view()),
+    path('orders/', OrderLisCreateView.as_view())
 ]
