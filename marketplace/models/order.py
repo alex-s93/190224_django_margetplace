@@ -11,13 +11,14 @@
     - Установите сортировку по полю order_date в порядке от самых новых записей к самым старым.
     - Установите поле order_date как используемое для получения последней записи.
 """
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class Order(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
     customer = models.ForeignKey(
-        'Customer',
+        User,
         on_delete=models.PROTECT,  # Удаление будет запрещено. Все объекты заказов защищены
         related_name='orders'
     )
